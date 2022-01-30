@@ -1,6 +1,8 @@
 <template>
     <div>
+        <AppStatus></AppStatus> home.vue
         <h1>{{ homeTitle }} </h1>
+        <AppStatus></AppStatus> home.vue
     </div>
 </template>
 

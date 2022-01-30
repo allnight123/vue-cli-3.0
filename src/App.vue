@@ -3,7 +3,9 @@
     <h1>{{ title }} </h1>
     <p>{{ count }} </p>
     <button @click="count ++">추가</button>
+    <AppStatus></AppStatus>App.vue<hr>
     <HomeComponent></HomeComponent>
+    <hr>
   </div>
 </template>
 

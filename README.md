@@ -74,8 +74,37 @@ vue add vuetify
 
 어떻게 사용했었는지를 히스토리를 남기기 위함이다.
 
+vue 에서 공식적으로 제공하는 플러그인 검색
+
+구글 검색창 -> @vue/cli-plugin 입력
+
+npm 으로 배포되어있는 모듈 검색
+
+구글 검색창 -> vue-cli-plugin- 입력
 
 
+vuetify 플러그인 설치
+
+프로젝트 폴더로 이동하여
+
+터미널에서 명령어를 친다.
+
+vue add vuetify
+
+인스톨을 시작하는데 버전들도 보여주면서 
+설치되는 과정이 보여진다.
+선택사항들을 선택하라고 한다.
+
+Use a pre-made template? Yes
+Use custom theme? No
+Use custom properties ? No
+Select icon font
+원하는 항목 선택
+Use babel/polyfill? Yes
+Select locale (사는곳 선택)
+기본값인 English 선택한다.
+
+빨간색 파일들이 나온것들은 새로 추가된 파일들이다.
 
 
 
