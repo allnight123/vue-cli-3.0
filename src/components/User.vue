@@ -6,7 +6,7 @@
     <hr>
     <v-layout row wrap>
       <v-flex xs12 sm6>
-        <UserDetail></UserDetail>
+        <UserDetail :nameOfChild="name"></UserDetail>
       </v-flex>
       <v-flex xs12 sm6>
         <UserEdit></UserEdit>
