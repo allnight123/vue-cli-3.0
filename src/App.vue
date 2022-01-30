@@ -7,8 +7,14 @@
 </template>
 
 <script>
+import HomeComponent from './Home.vue'
+// import HomeComponent from './Home' 이렇게 생략 해도 된다.
 
 export default {
+  components: {
+    HomeComponent
+  },
+  
   data () {
     return {
       title : "안녕하세요" ,
