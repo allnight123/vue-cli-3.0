@@ -46,8 +46,12 @@ export default {
     }
   },
   methods: {
-    parents(){
+    parents(user){
       console.log("부모가받았어(inputChild)")
+       this.name = user.name,
+       this.address = user.address,
+       this.phone = user.phone,
+       this.hasDog = user.hasDog
     }
   } 
 }
