@@ -2,7 +2,7 @@
   <div class="blue lighten-3 pa-3">
     <h1>User 컴포넌트</h1>
     <p>이름: {{ name }} </p>
-    <button @click="changeName()">이름변경</button>
+    <v-btn color="info" @click="changeName()">이름변경</v-btn>
     <hr>
     <v-layout row wrap>
       <v-flex xs12 sm6>
