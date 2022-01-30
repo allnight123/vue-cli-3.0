@@ -40,8 +40,8 @@
     },
     methods:{
       changeUser(){
-        console.log(this.user)
-        this.$emit("inputchild")
+        // console.log(this.user)
+        this.$emit("inputchild" , this.user)
       }
     }
   }   
