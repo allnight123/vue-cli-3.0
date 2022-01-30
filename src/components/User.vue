@@ -1,7 +1,8 @@
 <template>
   <div class="blue lighten-3 pa-3">
     <h1>User 컴포넌트</h1>
-    <p>이름: 뷰제이에스</p>
+    <p>이름: {{ name }} </p>
+    <button @click="changeName()">이름변경</button>
     <hr>
     <v-layout row wrap>
       <v-flex xs12 sm6>
@@ -22,6 +23,16 @@ export default {
   components: {
     UserDetail,
     UserEdit
+  },
+  data() {
+    return{
+      name: '뷰 제이에스'
+    }
+  },
+  methods: {
+    changeName(){
+      this.name = 'hoza'
+    }
   }
 }
 </script>
