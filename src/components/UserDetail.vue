@@ -3,6 +3,7 @@
     <h5>UserDatail.vue</h5>
     <h3>자세한 회원 정보를 확인합니다.</h3>
     <p>{{ nameOfChild && '님' && sayHello}} </p>
+    <v-btn @click="switchName()">이름변경</v-btn>    
   </div>
 </template>
 
@@ -18,6 +19,11 @@ export default {
   computed:{
     sayHello() {
       return this.nameOfChild + '안녕하세요'
+    }
+  },
+  methods:{
+    switchName(){
+      this.nameOfChild = '컴퓨터'
     }
   },
   data() {
