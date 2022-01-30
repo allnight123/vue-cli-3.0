@@ -20,18 +20,37 @@
         <v-list-tile-content>반려견유뮤:</v-list-tile-content>
         <v-list-tile-content class="align-end">{{ hasDogKr }}</v-list-tile-content>
       </v-list-tile>
+      <v-list-tile>
+        <v-list-tile-content>수정일자:</v-list-tile-content>
+        <v-list-tile-content class="align-end">{{ editedDate }}</v-list-tile-content>
+      </v-list-tile>
     </v-list>
     <!-- <v-btn @click="switchName()">이름변경</v-btn>     -->
   </div>
 </template>
 
 <script>
+import { eventBus } from '../main'
+
 export default {
+  data() {
+    return {
+      editedDate: null
+    }
+  },
+
   props: [ 'name','address', 'phone', 'hasDog'],
+
   computed:{
     hasDogKr() {
       return this.hasDog === true ? '있음' : '없음'
     }
+  },
+
+  created(){
+    eventBus.$on('userWasEdited' , date => {
+      this.editedDate = date
+    })
   }
 }
 </script>
