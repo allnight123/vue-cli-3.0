@@ -6,7 +6,14 @@
     <hr>
     <v-layout row wrap>
       <v-flex xs12 sm6>
-        <UserDetail :nameOfChild="name"></UserDetail>
+        <UserDetail 
+          :name="name"
+          :address="address"
+          :phone="phone"
+          :hasDog="hasDog"
+          >
+        
+        </UserDetail>
       </v-flex>
       <v-flex xs12 sm6>
         <UserEdit></UserEdit>
@@ -15,7 +22,7 @@
   </div>
 </template>
 
-<script>
+<script>  
 import UserDetail from "./UserDetail.vue"
 import UserEdit from "./UserEdit.vue"
 
@@ -26,7 +33,10 @@ export default {
   },
   data() {
     return{
-      name: '뷰 제이에스'
+      name:"hoza",
+      address:"Seoul",
+      phone:"010-1234-5678",
+      hasDog:true
     }
   },
   methods: {
