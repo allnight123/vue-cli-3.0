@@ -1,28 +1,18 @@
 <template>
-  <div>
-    <h1>{{ title }} </h1>
-    <p>{{ count }} </p>
-    <button @click="count ++">추가</button>
-    <AppStatus></AppStatus>App.vue<hr>
-    <HomeComponent></HomeComponent>
-    <hr>
-  </div>
+  <v-app>
+    <v-content>
+      <User/>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-import HomeComponent from './Home.vue'
-// import HomeComponent from './Home' 이렇게 생략 해도 된다.
+import User from "./components/User"
 
 export default {
+  name: "App",
   components: {
-    HomeComponent
-  },
-
-  data () {
-    return {
-      title : "안녕하세요" ,
-      count : 1
-    }
+    User
   }
 }
 </script>
