@@ -60,7 +60,9 @@ vue add vue-cli-plugin-vuetify@0.2.1  명령을 먼저 입력한다.
 
 이제 정상적인 명령어인
 
-vue add vuetify  이렇게 명령을 입력하고 나면 
+vue add vuetify  
+
+이렇게 명령을 입력하고 나면 
 
 강의에 맞는 세팅에 맞춰진다.
 
