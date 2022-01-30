@@ -16,7 +16,13 @@
         </UserDetail>
       </v-flex>
       <v-flex xs12 sm6>
-        <UserEdit></UserEdit>
+        <UserEdit
+          :name="name"
+          :address="address"
+          :phone="phone"
+          :hasDog="hasDog"
+          @inputchild="parents"
+        ></UserEdit>
       </v-flex>
     </v-layout>
   </div>
@@ -40,9 +46,9 @@ export default {
     }
   },
   methods: {
-    changeName(){
-      this.name = 'hoza'
+    parents(){
+      console.log("부모가받았어(inputChild)")
     }
-  }
+  } 
 }
 </script>
