@@ -43,7 +43,8 @@ export default {
   methods:{
     changeUser(){
       this.$emit("inputchild" , this.user)
-      eventBus.$emit("userWasEdited" , new Date())
+      // eventBus.$emit("userWasEdited" , new Date())
+      eventBus.userWasEdited( new Date() )
     }
   }
 }   
