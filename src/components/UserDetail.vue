@@ -27,18 +27,38 @@
           >{{ hasDogKr }}
         </v-list-tile-content>
       </v-list-tile>
-    </v-list>
+      <v-list-tile>
+        <v-list-tile-content>수정일자 :</v-list-tile-content>
+        <v-list-tile-content class="align-end"
+          >{{ editedDate }}
+        </v-list-tile-content>
+      </v-list-tile>
+    </v-list> 
   </div>
 </template>
 
 <script>
+import { eventBus } from '../main'
+
 export default {
+  data() {
+    return {
+      editedDate: null
+    }
+  },
   props: ["name", "address", "phone", "hasDog"], // 값을 받는쪽 에다가 선언해줘야 한다.
 
   computed: {
     hasDogKr() {
-      return this.hasDog === true ? "있음" : "없음";
+      // console.log('hasDog' , this.hasDog)
+      return this.hasDog === 'true' ? "있음" : "없음"
     },
   },
+
+  created() {
+    eventBus.$on('userWasEdited' , date => {
+      return this.editedDate = date
+    })
+  }
 };
 </script>
