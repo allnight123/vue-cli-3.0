@@ -6,14 +6,17 @@
     <v-text-field label="주소" placeholder="Placeholder" v-model="user.address">    </v-text-field>
     <v-text-field label="전화번호" placeholder="Placeholder" v-model="user.phone">    </v-text-field>
     <v-radio-group column v-model="user.hasDog">
-      <v-radio label="반려견 있음" value="true"></v-radio>
-      <v-radio label="반려견 없음" value="false"></v-radio>      
+      <v-radio label="반려견 있음" value=true></v-radio>
+      <v-radio label="반려견 없음" value=false></v-radio>
     </v-radio-group>
     <v-btn @click="changeUser()">수정완료</v-btn>
   </div>
 </template>
 
 <script>
+
+import { eventBus } from '../main'
+
 export default {
   props: ["name", "address", "phone", "hasDog"], // 값을 받는쪽 에다가 선언해줘야 한다.
   data() {
@@ -31,9 +34,12 @@ export default {
 
   methods: {
     changeUser() {
-      console.log(this.user)
-      this.$emit("child" , this.user)
+      console.log('userEdited' ,this.user)
+      this.$emit( "child" , this.user)
+      // eventBus.$emit( 'userWasEdited' , new Date() )
+      eventBus.userWasEdited( new Date() )
     }
   }
-};
+
+}
 </script>
