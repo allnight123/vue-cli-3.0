@@ -30,7 +30,7 @@
       <v-list-tile>
         <v-list-tile-content>수정일자 :</v-list-tile-content>
         <v-list-tile-content class="align-end"
-          >{{ editedDate }}
+          >{{ getDateAndTime(editedDate) }}
         </v-list-tile-content>
       </v-list-tile>
     </v-list> 
@@ -39,6 +39,7 @@
 
 <script>
 import { eventBus } from '../main'
+import { dateFormat } from '../mixins/dateFormats'
 
 export default {
   data() {
@@ -50,7 +51,6 @@ export default {
 
   computed: {
     hasDogKr() {
-      // console.log('hasDog' , this.hasDog)
       return this.hasDog === 'true' ? "있음" : "없음"
     },
   },
@@ -59,6 +59,21 @@ export default {
     eventBus.$on('userWasEdited' , date => {
       return this.editedDate = date
     })
-  }
+  },
+
+  methods: {
+    // getDateAndTime(date) {
+    //   if ( date !== null) {
+    //     let hour = date.getHours()
+    //     let minutes = date.getMinutes()
+    //     let fullDate = `${date.getFullYear()} / ${date.getMonth() + 1} / ${date.getDate()}`
+    //     return `${fullDate} ${hour} : ${minutes}`
+    //   }
+    //   else {
+    //     return null
+    //   }
+    // }
+  },
+  mixins : [ dateFormat ]
 };
 </script>

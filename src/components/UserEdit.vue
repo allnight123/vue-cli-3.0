@@ -33,13 +33,12 @@ export default {
   },
 
   methods: {
-    changeUser() {
-      console.log('userEdited' ,this.user)
+      changeUser() {
       this.$emit( "child" , this.user)
-      // eventBus.$emit( 'userWasEdited' , new Date() )
       eventBus.userWasEdited( new Date() )
     }
   }
 
 }
 </script>
+
