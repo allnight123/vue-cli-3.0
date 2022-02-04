@@ -20,3 +20,5 @@ yarn-error.log*
 *.sln
 *.sw?
 jsconfig.js
+vetur.config.js
+jsconfig.json
