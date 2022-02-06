@@ -3,6 +3,7 @@
     <h1>User 컴포넌트</h1>
     <p>이름: 뷰 제이에스</p>
     <p>{{ getDateAndTime(createdAt) }} </p>
+    {{ helloToMixin }}
     <hr>
     <v-layout row wrap>
       <v-flex xs12 sm6>
@@ -51,7 +52,14 @@ export default {
     }
   },
 
+  computed: {
+    helloToMixin(){
+      return this.mixinData + '안녕하시오.'
+    }
+  },
+
   created() {
+    console.log('유저 컴포넌트')
     this.createdAt = new Date()
   },
 
@@ -64,12 +72,12 @@ export default {
       console.log('부모가 받았어')
     },
   
-    // getDateAndTime(date) {
-    //   let hour = date.getHours()
-    //   let minutes = date.getMinutes()
-    //   let fullDate = `${date.getFullYear()} / ${date.getMonth() + 1} / ${date.getDate()}`
-    //   return `${fullDate} ${hour} : ${minutes}`
-    // }
+    getDateAndTime(date) {
+      let hour = date.getHours()
+      let minutes = date.getMinutes()
+      let fullDate = `${date.getFullYear()} / ${date.getMonth() + 1} / ${date.getDate()}`
+      return `${hour} : ${minutes} // ${fullDate} `
+    }
   },
   mixins : [ dateFormat ]
 }
